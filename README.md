@@ -10,6 +10,7 @@ Clasificador educativo de Machine Learning que usa un **Random Forest** entrenad
 ```text
 .
 ├── modelo_cancer_mama.pkl
+├── INICIAR_MODELO.bat
 ├── notebooks/
 │   └── entrenamiento_modelo.ipynb
 ├── predecir.py
@@ -19,7 +20,11 @@ Clasificador educativo de Machine Learning que usa un **Random Forest** entrenad
 
 ## Instalación
 
-Requiere Python 3.9 o posterior. Desde la carpeta del proyecto, instala las dependencias:
+### Inicio sencillo en Windows
+
+Haz doble clic en `INICIAR_MODELO.bat`. El lanzador prepara un entorno Python 3.12, instala las dependencias y crea/abre `entrada.json` en el Bloc de notas. Completa las 30 mediciones y guarda el archivo; al cerrar el Bloc de notas, aparecerá la predicción en la terminal. En usos posteriores puedes editar el mismo archivo.
+
+La primera ejecución requiere `uv` y conexión a Internet para descargar Python y los paquetes. Para usar la terminal manualmente, se requiere Python 3.9 o posterior. Instala las dependencias así:
 
 ```bash
 python -m pip install -r requirements.txt
