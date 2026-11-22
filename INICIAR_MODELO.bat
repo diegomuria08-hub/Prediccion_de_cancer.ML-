@@ -22,19 +22,9 @@ echo Comprobando e instalando dependencias...
 uv pip install --python ".venv\Scripts\python.exe" -r requirements.txt
 if errorlevel 1 goto error
 
-if not exist "entrada.json" (
-    ".venv\Scripts\python.exe" predecir.py --plantilla entrada.json
-    if errorlevel 1 goto error
-)
-
 echo.
-echo Se abrira entrada.json. Completa las 30 mediciones y guarda el archivo.
-echo Cierra el Bloc de notas para ejecutar la prediccion.
-start "" /wait notepad.exe "entrada.json"
-
-echo.
-echo Resultado del modelo:
-".venv\Scripts\python.exe" predecir.py entrada.json
+echo Iniciando la sesion interactiva. El modelo se carga una sola vez.
+".venv\Scripts\python.exe" predecir.py
 if errorlevel 1 goto error
 echo.
 pause

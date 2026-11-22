@@ -22,7 +22,7 @@ Clasificador educativo de Machine Learning que usa un **Random Forest** entrenad
 
 ### Inicio sencillo en Windows
 
-Haz doble clic en `INICIAR_MODELO.bat`. El lanzador prepara un entorno Python 3.12, instala las dependencias y crea/abre `entrada.json` en el Bloc de notas. Completa las 30 mediciones y guarda el archivo; al cerrar el Bloc de notas, aparecerá la predicción en la terminal. En usos posteriores puedes editar el mismo archivo.
+Haz doble clic en `INICIAR_MODELO.bat`. El lanzador prepara un entorno Python 3.12 e instala las dependencias. El modelo se carga una sola vez y aparece un menú en la terminal. Elige **1** para predecir; la primera vez se crea y abre `entrada.json` en el Bloc de notas para completar las 30 mediciones. Guarda y cierra el Bloc de notas para ver el resultado. Después puedes repetir predicciones con el mismo modelo cargado o elegir **2** para salir.
 
 La primera ejecución requiere `uv` y conexión a Internet para descargar Python y los paquetes. Para usar la terminal manualmente, se requiere Python 3.9 o posterior. Instala las dependencias así:
 
@@ -32,15 +32,15 @@ python -m pip install -r requirements.txt
 
 ## Uso
 
-Genera un archivo JSON con las 30 claves de entrada:
+Inicia el modo interactivo (el modelo queda en memoria para todas las predicciones de esa sesión):
 
 ```bash
-python predecir.py --plantilla entrada.json
+python predecir.py
 ```
 
-La plantilla inicial usa `0.0` como marcador; **reemplaza cada valor** por la medición correspondiente antes de predecir. Esos ceros no representan una muestra real.
+Elige la opción 1. Puedes indicar el archivo JSON de entrada o presionar Enter para usar `entrada.json`. Si todavía no existe, se crea una plantilla y se abre en el Bloc de notas. Reemplaza sus valores `0.0` por las mediciones correspondientes antes de continuar; esos ceros son marcadores y no representan una muestra real. Elige la opción 2 para terminar la sesión.
 
-Ejecuta la clasificación:
+Para una sola predicción sin menú, pasa la ruta del JSON:
 
 ```bash
 python predecir.py entrada.json
